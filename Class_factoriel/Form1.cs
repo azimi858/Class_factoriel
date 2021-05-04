@@ -12,14 +12,17 @@ namespace Class_factoriel
 {
 	public partial class Form1 : Form
 	{
+		#region [InitialVariables]
 		bool is_result = false;
 		string SenderButton = string.Empty;
+		#endregion [InitialVariables]
 
 		public Form1()
 		{
 			InitializeComponent();
 		}
 
+		#region [Buttons]
 		private void button_factoriel_Click(object sender, EventArgs e)
 		{
 			is_result = true;
@@ -29,10 +32,7 @@ namespace Class_factoriel
 			//byte InputNumber = byte.Parse(textBox_input.Text);
 
 			// ------------ Solotion 2
-			bool is_number = UInt64.TryParse(richTextBox1.Text, out InputNumber);
-
-
-			if (is_number == false)
+			if (!UInt64.TryParse(richTextBox1.Text, out InputNumber))
 			{
 				richTextBox1.Text = $"Only numbers are valid !";
 			}
@@ -60,22 +60,12 @@ namespace Class_factoriel
 					richTextBox1.AppendText($"{result_final}");
 				}
 			}
-
-
 		}
-
 
 		private void button_7_Click(object sender, EventArgs e)
 		{
-			if (is_result == true)
-			{
-				richTextBox1.Text = string.Empty;
-			}
-
-			is_result = false;
-
+			ResetRichTextBox();
 			SenderButton = (sender as Button).Text;
-
 			richTextBox1.Text = $"{richTextBox1.Text}{SenderButton}";
 		}
 
@@ -96,11 +86,19 @@ namespace Class_factoriel
 
 		private void richTextBox1_MouseClick(object sender, MouseEventArgs e)
 		{
+			ResetRichTextBox();
+		}
+		#endregion [Buttons]
+
+		#region [Methods]
+		public void ResetRichTextBox()
+		{
 			if (is_result == true)
 			{
 				richTextBox1.Text = string.Empty;
 			}
 			is_result = false;
 		}
+		#endregion [Methods]
 	}
 }
