@@ -30,6 +30,8 @@ namespace Class_factoriel
 
 			// ------------ Solotion 2
 			bool is_number = UInt64.TryParse(richTextBox1.Text, out InputNumber);
+
+
 			if (is_number == false)
 			{
 				richTextBox1.Text = $"Only numbers are valid !";
@@ -53,7 +55,7 @@ namespace Class_factoriel
 					richTextBox1.Text = string.Empty;
 					richTextBox1.SelectionFont = new Font("Microsoft YaHei UI Light", 10, FontStyle.Italic);
 					richTextBox1.SelectionColor = System.Drawing.Color.Gray;
-					richTextBox1.AppendText($"{InputNumber} factoriel ={Environment.NewLine}");
+					richTextBox1.AppendText($"{InputNumber} factorial ={Environment.NewLine}");
 					richTextBox1.SelectionFont = new Font("Microsoft YaHei UI Light", 14, FontStyle.Regular);
 					richTextBox1.AppendText($"{result_final}");
 				}

@@ -52,7 +52,7 @@
 			this.button_factoriel.Name = "button_factoriel";
 			this.button_factoriel.Size = new System.Drawing.Size(148, 56);
 			this.button_factoriel.TabIndex = 0;
-			this.button_factoriel.Text = "Factoriel";
+			this.button_factoriel.Text = "Factorial";
 			this.button_factoriel.UseVisualStyleBackColor = false;
 			this.button_factoriel.Click += new System.EventHandler(this.button_factoriel_Click);
 			// 
@@ -172,6 +172,7 @@
 			this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 14F);
 			this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+			this.richTextBox1.MaxLength = 19;
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
 			this.richTextBox1.Size = new System.Drawing.Size(343, 61);
@@ -184,6 +185,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.DarkGray;
 			this.ClientSize = new System.Drawing.Size(365, 329);
 			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.button_clear);
@@ -199,7 +201,7 @@
 			this.Controls.Add(this.button_7);
 			this.Controls.Add(this.button_factoriel);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "Factorial Calculator";
 			this.ResumeLayout(false);
 
 		}
