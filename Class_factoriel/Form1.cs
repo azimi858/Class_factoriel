@@ -12,10 +12,12 @@ namespace Class_factoriel
 {
 	public partial class Form1 : Form
 	{
+
 		#region [InitialVariables]
 		bool is_result = false;
 		string SenderButton = string.Empty;
 		#endregion [InitialVariables]
+
 
 		public Form1()
 		{
