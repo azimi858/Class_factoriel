@@ -12,85 +12,16 @@ namespace ButtonMove
 {
 	public partial class Form1 : Form
 	{
-		bool IsStop = true;
+		private RotateCounter RotateClass = new RotateCounter();
+
 		public Form1()
 		{
 			InitializeComponent();
 		}
 
-		private void StopButton_Click(object sender, EventArgs e)
+		public void StopButton_Click(object sender, EventArgs e)
 		{
-			if (IsStop == false)
-			{
-				button1.Text = $"◆";
-				IsStop = true;
-				StopButton.Text = "START";
-			}
-			else
-			{
-				IsStop = false;
-				StopButton.Text = "STOP";
-				ButtonMove();
-			}
-
-
+			RotateClass.RotateButton(StopButton, button1, 3, ClientSize.Width, ClientSize.Height);
 		}
-
-
-
-
-		private void SleepSpeed()
-		{
-			System.Threading.Thread.Sleep(10);
-			Application.DoEvents();
-			StopButton.Focus();
-		}
-
-
-		private void ButtonMove()
-		{
-			while (IsStop == false)
-			{
-				while (button1.Location.X > 0 && IsStop == false)
-				{
-					//button1.Text = (button1.Text == "OK") ? "<<<<" : "MOVE.";
-					button1.Left--;
-					button1.Text = "◀";
-					SleepSpeed();
-				}
-				while (button1.Location.Y > 0 && IsStop == false)
-				{
-					button1.Top--;
-					button1.Text = $"▲";
-					SleepSpeed();
-				}
-				while (button1.Location.X + button1.Width <= ClientSize.Width && IsStop == false)
-				{
-					button1.Left++;
-					button1.Text = $"▶";
-					SleepSpeed();
-				}
-				while (button1.Location.Y + button1.Height <= ClientSize.Height && IsStop == false)
-				{
-					button1.Top++;
-					button1.Text = $"▼";
-					SleepSpeed();
-				}
-				while (button1.Location.X >= 0 && IsStop == false)
-				{
-					button1.Left--;
-					button1.Text = "◀";
-					SleepSpeed();
-				}
-				while (button1.Location.Y >= 0 && IsStop == false)
-				{
-					button1.Top--;
-					button1.Text = $"▲";
-					SleepSpeed();
-				}
-			}
-		}
-
-
 	}
 }
