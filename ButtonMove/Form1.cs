@@ -22,6 +22,7 @@ namespace ButtonMove
 		public void StopButton_Click(object sender, EventArgs e)
 		{
 			RotateClass.RotateButton(StopButton, button1, 3, ClientSize.Width, ClientSize.Height);
+
 		}
 	}
 }
