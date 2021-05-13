@@ -12,7 +12,7 @@ namespace ButtonMove
 {
 	public partial class Form1 : Form
 	{
-		private RotateCounter RotateClass = new RotateCounter();
+		private RotateCounter _rotateClass = new RotateCounter();
 
 		public Form1()
 		{
@@ -21,8 +21,12 @@ namespace ButtonMove
 
 		public void StopButton_Click(object sender, EventArgs e)
 		{
-			RotateClass.RotateButton(StopButton, button1, 3, ClientSize.Width, ClientSize.Height);
+            _rotateClass.Width = ClientSize.Width;
+            _rotateClass.Height = ClientSize.Height;
 
+            _rotateClass.RotateButton(StopButton, button1, 3/*, ClientSize.Width, ClientSize.Height*/);
+            
+            
 		}
 	}
 }
